@@ -3,7 +3,15 @@ You've learned a lot about web development so far. I want you to take a moment t
   * What has been easy?
   * What has been difficult?
   * How have you used the problem solving strategies from the first project to overcome challenges so far?
-
 ---
 
 Your response goes here!
+* What new skills have you learned?
+  I have learned three different tags <hr>, <s>, and <sup>.
+  Besides that I know how to use the tags I know to organize the page layout and put the elements to the position I want them to be.
+* What has been easy?
+  Using the tags I learned during the video clips.
+* What has been difficult?
+  Nothing has been difficult.
+* How have you used the problem solving strategies from the first project to overcome challenges so far?
+  I tried solutions by directly type the code, the validated the result in the browser. So I could step by step eliminated the wrong coding and improved very fast.
