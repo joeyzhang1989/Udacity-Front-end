@@ -1,22 +1,25 @@
 /* add your CSS here */
-h3 {
+.card-title {
 	font-weight: bold;
 	margin-left: 10px;
 	padding: 10px 0 10px 0;
 }
-#panda {
+
+.panda {
 	width: 320px;
 	border: 1px solid #000019;
 	box-shadow: 5px 5px 20px 5px rgba(46,42,46,0.5);
 
 }
-img {
+
+.animal-pic {
 	border: 1px solid #000019;
 	margin: 10px 0 10px 10px;
 	padding: 10px 0 10px 0;
 
 }
-#animalinfo {
+
+.animalinfo {
 	width: 300px;
 	margin: 0 0 10px 10px;
 	border: 1px solid #000019;
@@ -33,7 +36,7 @@ img {
 	list-style-type: none;
 	list-style-position: outside;
 }
-.pandalist span {
+.pandalist .fact-label {
 	font-weight: bold;
 }
 
