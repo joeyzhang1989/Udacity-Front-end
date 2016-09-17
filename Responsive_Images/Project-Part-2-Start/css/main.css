@@ -1,12 +1,13 @@
 article {
   margin: 0 auto;
   max-width: 50em;
-  border-bottom: 0.4em;
+  border-bottom: 2px solid;
 }
 
 body {
   font-family: sans-serif;
   margin: 2em;
+
 }
 
 h1 {
