@@ -1,6 +1,7 @@
 article {
   margin: 0 auto;
   max-width: 50em;
+  border-bottom: 0.4em;
 }
 
 body {
@@ -19,4 +20,14 @@ img {
 
 .flourish {
 	max-width: 100%;
+}
+
+.social {
+	margin-left: 45%;
+}
+
+.logo {
+	max-width: 48px;
+	max-height: 48px;
+	float: left;
 }
