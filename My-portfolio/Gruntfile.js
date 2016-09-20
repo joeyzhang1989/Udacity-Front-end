@@ -18,19 +18,19 @@ module.exports = function(grunt) {
             name: 'small',
             width: 420,
             suffix: '_1x',
-            quality: 50
+            quality: 40
           },{
             /* medium */
             name: 'medium',
             width: 768,
             suffix: '_1x',
-            quality: 50
+            quality: 40
           },{
             /* large */
             name: 'large',
             width: 1024,
             suffix: '_1x',
-            quality: 50
+            quality: 40
           }]
         },
 
