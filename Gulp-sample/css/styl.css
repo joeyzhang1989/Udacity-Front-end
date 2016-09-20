@@ -12,7 +12,7 @@ section p input {
   -moz-border-radius: 28px;
   -webkit-border-radius: 28px;
   border-radius: 28px;
-  background-color: #2600fa;
+  background-color: #260090;
   border: 1px solid #18ab29;
   display: inline-block;
   cursor: pointer;
@@ -20,7 +20,7 @@ section p input {
   font-family: Arial;
   font-size: 28px;
   font-weight: bold;
-  padding: 23px 30px;
+  padding: 22px 30px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
 }
