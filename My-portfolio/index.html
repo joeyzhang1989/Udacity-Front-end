@@ -6,7 +6,7 @@
 	<link href="css/main.css" rel="stylesheet">
 	<link href="css/normalize.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrape.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale-1">
@@ -79,18 +79,74 @@
 				<p>Front-End Developer</p>
 			</div>
 		</header>
-		<article class="content">
-			<picture class="profile-image">
-				<source media="(max-width: 420px)" srcset="img/the_joker-small.jpg 420w" sizes="30vw">
-				<source media="(max-width: 768px)" srcset="img/the_joker-medium.jpg 768w" sizes="40vw">
-				<source media="(min-width: 1024px)" srcset="img/the_joker-large.jpg 1024w" sizes="50vw">
-				<img src="img/the_joker.jpg" 
-					 srcset="img/the_joker.jpg 800w" 
-					 sizes="50vw" 
-					 alt="The Joker image from the movie dark knight">
-			</picture>
-			<section class="work">
+		<article class="content clearfix">
+			<section class="profile-image">
+				<picture>
+					<source media="(max-width: 420px)" srcset="img/the_joker-420.jpg 420w" sizes="100vw">
+					<source media="(max-width: 768px)" srcset="img/the_joker-768.jpg 768w" sizes="100vw">
+					<source media="(min-width: 1024px)" srcset="img/the_joker-1024.jpg 1024w" sizes="100vw">
+					<img src="img/the_joker-800.jpg" 
+						 srcset="img/the_joker-800.jpg 800w" 
+						 sizes="100vw" 
+						 alt="The Joker image from the movie dark knight">
+				</picture>
+			</section>
+			<section class="work clearfix">
 				<h2>Featured Repositories</h2>
+				<div class="container">
+					<div class="item">
+						<figure>
+							<picture>
+								<source media="(max-width: 420px)" srcset="img/tower-defense-150.png 150w" sizes="100vw">
+								<source media="(max-width: 768px)" srcset="img/tower-defense-200.png 200w" sizes="50vw">
+								<source media="(min-width: 1024px)" srcset="img/tower-defense-350.png 350w" sizes="30vw">
+								<img src="img/tower-defense-250.png" 
+								 	 srcset="img/tower-defense-250.png 250w" 
+								 	 sizes="33vw" 
+								 	 alt="Tower-Defense">
+							</picture>
+							<figcaption>
+								<a href="https://github.com/joeyzhang1989/Tower-Defense" target="_blank">Tower-Defense</a>
+								<p>https://github.com/joeyzhang1989/Tower-Defense</p>	
+							</figcaption>
+						</figure>
+					</div>
+					<div class="item">
+						<figure>
+							<picture>
+								<source media="(max-width: 420px)" srcset="img/file-transfer-program-150.png 150w" sizes="100vw">
+								<source media="(max-width: 768px)" srcset="img/file-transfer-program-200.png 200w" sizes="50vw">
+								<source media="(min-width: 1024px)" srcset="img/file-transfer-program-350.png 350w" sizes="30vw">
+								<img src="img/file-transfer-program-250.png" 
+									 srcset="img/file-transfer-program-250.png 250w" 
+									 sizes="33vw" 
+									 alt="file-transfer-program">
+							</picture>
+							<figcaption>
+								<a href="https://github.com/joeyzhang1989/File-Transfer-Program" target="_blank">Udacity-Front-End</a>
+								<p>https://github.com/joeyzhang1989/Udacity-Front-end</p>	
+							</figcaption>
+						</figure>
+					</div>
+					<div class="item">
+						<figure>
+							<picture>
+								<source media="(max-width: 420px)" srcset="img/Udacity-Front-End-150.png 150w" sizes="100vw">
+								<source media="(max-width: 768px)" srcset="img/Udacity-Front-End-200.png 200w" sizes="50vw">
+								<source media="(min-width: 1024px)" srcset="img/Udacity-Front-End-350.png 350w" sizes="30vw">
+								<img class="item"
+									 src="img/Udacity-Front-End-250.png" 
+									 srcset="img/Udacity-Front-End-250.png 250w" 
+									 sizes="33vw" 
+									 alt="The Joker image from the movie dark knight">
+							</picture>
+						<figcaption>
+							<a href="https://github.com/joeyzhang1989/Udacity-Front-end" target="_blank">Udacity-Front-End</a>
+							<p>https://github.com/joeyzhang1989/Udacity-Front-end</p>	
+						</figcaption>
+						</figure>			
+					</div>		
+				</div>
 			</section>
 		</article>
 		<aside class="color-template">
