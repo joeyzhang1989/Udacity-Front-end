@@ -1,0 +1,53 @@
+body {
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	
+}
+
+.main {
+	width: 80%;
+	margin: 0 auto;
+	box-sizing: border-box;
+
+}
+
+.color-template {
+	width: 20%;
+	height: 100%;
+}
+
+.logo {
+	float: left;
+	width: 10%;
+	height: 20%;
+}
+
+.portfolio-header {
+	width: 100%;
+	height: 20%;
+}
+
+.header-info {
+	position: relative;
+	float: right;
+}
+
+.header-info p {
+	float: right;
+}
+
+.profile-image img {
+	border-top: 0.2em solid #026790;
+	padding: 0.5em 0;
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
