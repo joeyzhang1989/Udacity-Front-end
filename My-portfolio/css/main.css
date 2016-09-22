@@ -6,7 +6,6 @@ body {
 }
 
 .page {
-	/*float: left;*/
 	width: 100%;
 }
 
@@ -16,16 +15,18 @@ body {
 	width: 10%;
 	margin: 5em 0.3em 2em 0.3em;
 	padding: 12em 0.5em;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex ;
-	flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+	    flex-flow: column nowrap;
 }
 
 .main {	
 	float: right;
 	width: 80%;
 	margin: 0 0.3em 0 0.3em;
-/*	margin: 0 auto;
-*/}
+}
 
 .color-template p {
 	text-align: center;
@@ -107,10 +108,16 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-around;
-	align-items: flex-start;
+	-ms-flex-flow: row nowrap;
+	    flex-flow: row nowrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 }
 
 figure {
@@ -120,7 +127,8 @@ figure {
 .item {
 	width: calc(100% / 3);
 	padding: 0;
-	align-self: baseline;
+	-ms-flex-item-align: baseline;
+	    align-self: baseline;
 	margin: 0 0.2em 0.1em 0;
 }
 
@@ -143,10 +151,16 @@ figure {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
-	align-items: flex-start;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 }
 
 .item {
@@ -163,8 +177,11 @@ figure {
 	width: 5%;
 	margin: 5em 0.3em 2em 0.3em;
 	padding: 10em 0.4em;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex ;
-	flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+	    flex-flow: column nowrap;
 }
 
 .it {
@@ -189,8 +206,11 @@ figure {
 	width: 3%;
 	margin: 3em 0.3em 2em 0.3em;
 	padding: 10em 0.4em;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex ;
-	flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+	    flex-flow: column nowrap;
 }
 
 .it {
