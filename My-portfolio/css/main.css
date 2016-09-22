@@ -1,19 +1,59 @@
 body {
+	width: 100%;
 	font-size: 100%;
 	font-family: 'Lato', sans-serif;
 	box-sizing: border-box;	
 }
 
-.main {
-	width: 80%;
-	margin: 0 auto;
+.page {
+	/*float: left;*/
+	width: 100%;
 }
 
 .color-template {
-	width: 20%;
+	float: left;
+	vertical-align: middle;
+	width: 10%;
+	margin: 5em 0.3em 2em 0.3em;
+	padding: 12em 0.5em;
+	display: flex ;
+	flex-flow: column nowrap;
+}
 
-	display: flex;
-	flex-direction: column;
+.main {	
+	float: right;
+	width: 80%;
+	margin: 0 0.3em 0 0.3em;
+/*	margin: 0 auto;
+*/}
+
+.color-template p {
+	text-align: center;
+	font-size: 0.7em;
+	width: 80%;
+	margin: 0.3em auto;
+}
+
+.it {
+	min-width: 48px;
+	min-height: 48px;
+	margin: 0.3em auto;
+}
+
+
+.color1 {
+	width: 80%; 
+	background-color: #7d97ad;
+}
+
+.color2 {
+	width: 80%; 
+	background-color: #026790;
+}
+
+.color3 {
+	width: 80%;
+	background-color: #2c3c49;
 }
 
 .portfolio-header {
@@ -33,6 +73,7 @@ body {
 
 .header-info p {
 	float: right;
+	color: #7d97ad;
 }
 
 .content {
@@ -89,13 +130,15 @@ figure {
 
 .description {
 	text-align: center;
+	color: #2c3c49;
 }
+
+/*mediaquery 
+  for repsonsiveness
+*/
 
 @media screen and (max-width: 720px) {
 
-.work h2 {
-	text-align: center;
-}
 .container {
 	width: 100%;
 	margin: 0;
@@ -112,24 +155,56 @@ figure {
 	
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 515px) {
 
-.work h2 {
+.color-template {
+	float: left;
+	vertical-align: middle;
+	width: 5%;
+	margin: 5em 0.3em 2em 0.3em;
+	padding: 10em 0.4em;
+	display: flex ;
+	flex-flow: column nowrap;
+}
+
+.it {
+	min-height: 44px;
+	margin: 0.1em auto;
+}
+
+.color-template p {
 	text-align: center;
-}
-.container {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
-	align-items: flex-start;
+	font-size: 0.6em;
+	width: 80%;
+	margin: 0.1em auto;
 }
 
-.item {
-	width: 100%;
 }
-	
+
+@media screen and (max-width: 420px) {
+
+.color-template {
+	float: left;
+	vertical-align: middle;
+	width: 3%;
+	margin: 3em 0.3em 2em 0.3em;
+	padding: 10em 0.4em;
+	display: flex ;
+	flex-flow: column nowrap;
+}
+
+.it {
+	min-width: 44px;
+	min-height: 44px;
+	margin: 0.1em auto;
+}
+
+.color-template p {
+	text-align: center;
+	font-size: 0.8em;
+	width: 80%;
+	margin: 0.1em auto;
+}
+
 }
 
