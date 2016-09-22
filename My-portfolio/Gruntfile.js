@@ -15,19 +15,19 @@ module.exports = function(grunt) {
           engine: 'im',
            sizes: [{
             /* small */
-            width: 420,
+            width: 50,
             quality: 40
           },{
             /* medium */
-            width: 768,
+            width: 80,
             quality: 40
           },{
             /* large */
-            width: 1024,
+            width: 120,
             quality: 40
           },{
             /* Backup-image */
-            width: 800,
+            width: 100,
             quality: 40
           }]
         },
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
-          cwd: 'img_src/',
+          cwd: 'img_src/p/',
           dest: 'img/'
         }]
       }
