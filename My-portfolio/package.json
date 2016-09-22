@@ -1,0 +1,31 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "webpage-from-mockup",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-mkdir": "^1.0.0",
+    "grunt-responsive-images": "^0.1.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeyzhang1989/Udacity-Front-end.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "chenglong zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeyzhang1989/Udacity-Front-end/issues"
+  },
+  "homepage": "https://github.com/joeyzhang1989/Udacity-Front-end#readme"
+}
