@@ -1,8 +1,8 @@
 body {
 	width: 100%;
 	font-size: 100%;
-	font-family: 'Lato', sans-serif;
-	box-sizing: border-box;	
+	font-family: "Lato", sans-serif;
+	box-sizing: border-box;
 }
 
 .page {
@@ -22,7 +22,7 @@ body {
 	    flex-flow: column nowrap;
 }
 
-.main {	
+.main {
 	float: right;
 	width: 80%;
 	margin: 0 0.3em 0 0.3em;
@@ -43,12 +43,12 @@ body {
 
 
 .color1 {
-	width: 80%; 
+	width: 80%;
 	background-color: #7d97ad;
 }
 
 .color2 {
-	width: 80%; 
+	width: 80%;
 	background-color: #026790;
 }
 
@@ -141,7 +141,7 @@ figure {
 	color: #2c3c49;
 }
 
-/*mediaquery 
+/*mediaquery
   for repsonsiveness
 */
 
@@ -166,7 +166,7 @@ figure {
 .item {
 	width: calc(100% - 1em);
 }
-	
+
 }
 
 @media screen and (max-width: 515px) {
@@ -227,4 +227,3 @@ figure {
 }
 
 }
-
