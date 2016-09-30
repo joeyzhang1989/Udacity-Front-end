@@ -13,3 +13,14 @@ http://lorempixel.com/350/150/animals/
 Good luck!
 
 */
+
+$(function(){
+	var articleItems = $('.article-item');
+	var first = articleItems.first();
+	var img = first.find('img');
+	console.log(img);
+	img.attr({
+		src: 'http://placekitten.com/350/150',
+		alt: 'animal'
+	});
+});
