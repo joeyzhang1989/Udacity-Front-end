@@ -13,7 +13,7 @@
 
 		 // image.onload = function () {
 		 // 	console.log("Loaded image");
-		 // 	ctx.drawImage(image,0,0,c.width,c.height);
+		 	// ctx.drawImage(image,0,0,c.width,c.height);
 		 // 	var savedImage = c.toDataURL();
 		 // 	window.open(savedImage);
 
@@ -37,15 +37,16 @@
 		// ctx.lineTo(75,75);
 		// ctx.fill();
 
-		ctx.font = "36pt impact";
-		ctx.textAlign = "center";
+		// ctx.font = "36pt impact";
+		// ctx.textAlign = "center";
 
-		ctx.fillStyle = "white";
-		ctx.fillText("CANVAS MEMES", c.width/2, 50);
+		// ctx.fillStyle = "white";
+		// ctx.fillText("CANVAS MEMES", c.width/2, 50);
 		
-		ctx.strokeStyle = "black";
-		ctx.lineWidth = 3;
-  		ctx.strokeText("CANVAS MEMES", c.width/2, 50);
-	</script>
+		// ctx.strokeStyle = "black";
+		// ctx.lineWidth = 3;
+  // 		ctx.strokeText("CANVAS MEMES", c.width/2, 50);
+  		var imageData = ctx.getImageData(0,0,100,100); 
+  	</script>
 </body>
 </html>
