@@ -8,14 +8,11 @@ function loadData() {
     var $greeting = $('#greeting');
     var $street = $('#street');
     var $city = $('#city');
-    
     // clear out old data before new request
     $wikiElem.text("");
     $nytElem.text("");
 
     // load streetview
-
-    // YOUR CODE GOES HERE!
     var streetValue = $street.val();
     var cityValue = $city.val();
     var location = streetValue + ', ' + cityValue;
@@ -24,6 +21,26 @@ function loadData() {
 
     $body.append(formattedLocation);
 
+    //load newyorktimes api
+    var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' +location+ '&sort=newest&api-key=8ea7da785c9147f6836c5ca751c2f769';
+    $nytHeaderElem.text('New York Times Articles About' + location);
+    $.getJSON( url, function( data ) {
+    
+    var items = [];
+    $.each( data.response, function() {
+        var docs = data.response.docs;
+        for (doc in docs) {
+            items.push( "<li class='article'><a href='"+ docs[doc].web_url+"'>'"+ docs[doc].headline.main+"'</a><p>'"+ docs[doc].snippet+"'</p></li>" );
+        }
+    });
+
+    for (item in items) {
+        $nytElem.append(items[item]);
+    }
+
+    }).error(function(e) {
+        $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
+    });
     
     return false;
 };
