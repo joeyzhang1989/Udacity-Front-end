@@ -44,21 +44,15 @@ function loadData() {
     });
     
     $.ajax({
-        url: 'http://en.wikipedia.org/w/api.php?action=opensearch&search='+ cityValue +'&format=json&callback=success',
-        type: 'GET',
+        url: 'http://en.wikipedia.org/w/api.php?action=opensearch&search='+ cityValue +'&format=json&callback=wikiCallback',
         dataType: 'jsonp',
-        success: function( data ) {
-                   $wikiElem.text("Wikipedia articles about" + cityValue);
+    }).done(function(data) {
+         $wikiElem.text("Wikipedia articles about" + cityValue);
                    for (var i = 0 , l = data[1].length; i < l; i++ ) {
                         $wikiElem.append("<li><a href='"+ data[3][i]+"'>"+ data[1][i]+"</a></li>");
                    }
-                }
-    }).done(function() {
-        console.log("success");
     }).fail(function() {
-        console.log("error");
-    }).always(function() {
-        console.log("complete");
+          $wikiElem.text("failed to get Wikipedia resoources");
     });
     
     return false;

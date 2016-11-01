@@ -1,0 +1,12 @@
+#cat {
+	display: table;
+	margin: auto;
+}
+
+.cat-container {
+	text-align: center;
+}
+
+#score {
+	display: inline;
+}

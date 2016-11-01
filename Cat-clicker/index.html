@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>Cat-clicker</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div class="cat-container">
+		<label>Click score:</label>
+		<p id="score">0</p>
+		<img src="images/cat.jpg" id="cat">
+	</div>
+	
+</body>
+<script>
+	var img = document.getElementById('cat');
+	var count = 0;
+	img.addEventListener('click', function(){
+		count += 1;
+	  var paragraph = document.getElementById('score');
+	  paragraph.innerHTML = count;
+	}, false);
+</script>
+</html>
