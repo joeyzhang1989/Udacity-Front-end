@@ -8,19 +8,39 @@
 </head>
 <body>
 	<div class="cat-container">
+		<p id="one-name"></p>
 		<label>Click score:</label>
-		<p id="score">0</p>
-		<img src="images/cat.jpg" id="cat">
+		<p id="one-score">0</p>
+		<img src="images/cat1.jpg" id="cat1">
+		<p id="two-name"></p>
+		<label>Click score:</label>
+		<p id="two-score">0</p>
+		<img src="images/cat2.jpg" id="cat2">
 	</div>
 	
 </body>
 <script>
-	var img = document.getElementById('cat');
+	var catOne = document.getElementById('cat1');
+	var catTwo = document.getElementById('cat2');
+	var oneName = "chewie";
+	var twoName = "poop";
 	var count = 0;
-	img.addEventListener('click', function(){
+	var number = 0;
+
+	var CatOnename = document.getElementById('one-name');
+	CatOnename.innerHTML = oneName;
+	catOne.addEventListener('click', function(){
 		count += 1;
-	  var paragraph = document.getElementById('score');
-	  paragraph.innerHTML = count;
+		var paragraph = document.getElementById('one-score');
+		paragraph.innerHTML = count;
+	}, false);
+
+	var CatTwoName = document.getElementById('two-name');
+	CatTwoName.innerHTML = twoName;
+	catTwo.addEventListener('click', function(){
+		number += 1;
+		var paragraph = document.getElementById('two-score');
+		paragraph.innerHTML = number;
 	}, false);
 </script>
 </html>
