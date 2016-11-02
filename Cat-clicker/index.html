@@ -7,40 +7,67 @@
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<div class="cat-container">
-		<p id="one-name"></p>
-		<label>Click score:</label>
-		<p id="one-score">0</p>
-		<img src="images/cat1.jpg" id="cat1">
-		<p id="two-name"></p>
-		<label>Click score:</label>
-		<p id="two-score">0</p>
-		<img src="images/cat2.jpg" id="cat2">
+	<div class="cat">
+		<div class="cat-display clearfix">
+			<p id="catName"></p>
+			<label>Click score:</label>
+			<p id="score">0</p>
+			<img src="images/cat1.jpg" id="cat1">
+		</div>
+		<div class="cat-selection clearfix">
+			<div class="cat-img">
+				<p class="catName1"></p>
+				<img src="images/cat1.jpg">
+			</div>
+			<div class="cat-img">
+				<p class="catName2"></p>
+				<img src="images/cat2.jpg">
+			</div>
+			<div class="cat-img">
+				<p class="catName3"></p>
+				<img src="images/cat3.jpg">
+			</div>
+			<div class="cat-img">
+				<p class="catName4"></p>
+				<img src="images/cat4.jpg">
+			</div>
+			<div class="cat-img">
+				<p class="catName5"></p>
+				<img src="images/cat5.jpg">
+			</div>
+		</div>
 	</div>
-	
 </body>
 <script>
 	var catOne = document.getElementById('cat1');
-	var catTwo = document.getElementById('cat2');
-	var oneName = "chewie";
-	var twoName = "poop";
+	var Catname1 = "chewie";
+	var Catname2 = "poop";
+	var catName3 = "cutie";
+	var Catname4 = "fury";
+	var Catname5 = "bubble";
 	var count = 0;
-	var number = 0;
 
-	var CatOnename = document.getElementById('one-name');
-	CatOnename.innerHTML = oneName;
-	catOne.addEventListener('click', function(){
-		count += 1;
-		var paragraph = document.getElementById('one-score');
-		paragraph.innerHTML = count;
-	}, false);
+	var select = document.getElementsByClass('cat-selection');
+	select.addEventListener('click', (function(countcopy){
+		return function () {
+			countcopy += 1;
+			console.log(countcopy);
+			var paragraph = document.getElementById('score');
+			paragraph.textContent = countcopy;
+		};
+	})(count));
 
-	var CatTwoName = document.getElementById('two-name');
-	CatTwoName.innerHTML = twoName;
-	catTwo.addEventListener('click', function(){
-		number += 1;
-		var paragraph = document.getElementById('two-score');
-		paragraph.innerHTML = number;
-	}, false);
+	var catName = document.getElementById('catName');
+	Catname.textContent = catName;
+	//use the Immediately-Invoked Function Expression to keep local variable
+	catOne.addEventListener('click', (function(countcopy){
+		return function () {
+			countcopy += 1;
+			console.log(countcopy);
+			var paragraph = document.getElementById('one-score');
+			paragraph.textContent = countcopy;
+		};
+	})(count));
+
 </script>
 </html>

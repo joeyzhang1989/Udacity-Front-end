@@ -1,12 +1,37 @@
+body {
+	width: 100%;
+}
+
 #cat {
 	display: table;
 	margin: auto;
 }
 
-.cat-container {
+.cat {
+	width: 100%;
 	text-align: center;
+}
+
+.cat-display {
+	width: 50%;
+	float: left;
+	display:inline-block;
+}
+
+.cat-selection {
+	width: 50%;
+	float: left;
+	display:inline-block;
 }
 
 #score{
 	display: inline;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
 }
