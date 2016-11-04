@@ -10,61 +10,75 @@
 	<div class="cat">
 		<div class="cat-display clearfix">
 			<p id="catName"></p>
-			<label>Click score:</label>
+			<img src="images/cat1.jpg" id="catDisplay">
+			<p>Click score:</p>
 			<p id="score">0</p>
-			<img src="images/cat1.jpg" id="cat1">
 		</div>
-		<div class="cat-selection clearfix">
+		<div class="clearfix" id="cat-selection">
 			<div class="cat-img">
-				<p class="catName1"></p>
+				<p id="catName1"></p>
 				<img src="images/cat1.jpg">
 			</div>
-			<div class="cat-img">
-				<p class="catName2"></p>
+			<div id="cat-img">
+				<p id="catName2"></p>
 				<img src="images/cat2.jpg">
 			</div>
 			<div class="cat-img">
-				<p class="catName3"></p>
+				<p id="catName3"></p>
 				<img src="images/cat3.jpg">
 			</div>
 			<div class="cat-img">
-				<p class="catName4"></p>
+				<p id="catName4"></p>
 				<img src="images/cat4.jpg">
 			</div>
 			<div class="cat-img">
-				<p class="catName5"></p>
+				<p id="catName5"></p>
 				<img src="images/cat5.jpg">
 			</div>
 		</div>
 	</div>
 </body>
 <script>
-	var catOne = document.getElementById('cat1');
-	var Catname1 = "chewie";
-	var Catname2 = "poop";
+	var catName1 = "chewie";
+	var catName2 = "poop";
 	var catName3 = "cutie";
-	var Catname4 = "fury";
-	var Catname5 = "bubble";
+	var catName4 = "fury";
+	var catName5 = "bubble";
 	var count = 0;
 
-	var select = document.getElementsByClass('cat-selection');
-	select.addEventListener('click', (function(countcopy){
-		return function () {
-			countcopy += 1;
-			console.log(countcopy);
-			var paragraph = document.getElementById('score');
-			paragraph.textContent = countcopy;
-		};
-	})(count));
-
 	var catName = document.getElementById('catName');
-	Catname.textContent = catName;
+	catName.textContent = catName1;
+
+	//set the cat names to the cat images on the selection area
+	function setName () {
+		document.getElementById('catName1').textContent = catName1;
+		document.getElementById('catName2').textContent = catName2;
+		document.getElementById('catName3').textContent = catName3;
+		document.getElementById('catName4').textContent = catName4;
+		document.getElementById('catName5').textContent = catName5;
+	}
+		
+	
+	setName();
+	var catDisplay = document.getElementById('catDisplay');
+	var select = document.getElementById('cat-img');
+
+	select.addEventListener("click", function changeCat(e) {
+		 if (e.target !== e.currentTarget) {
+		 	console.log(this.children);
+	        catDisplay.setAttribute('src', this.children[1].getAttribute('src'));
+	       	catName.setAttribute('textContent', this.children[0].getAttribute('textContent'));
+	    }
+	    e.stopPropagation();
+
+	}, false);
+
+	
 	//use the Immediately-Invoked Function Expression to keep local variable
-	catOne.addEventListener('click', (function(countcopy){
+	catDisplay.addEventListener('click', (function(countcopy){
 		return function () {
 			countcopy += 1;
-			console.log(countcopy);
-			var paragraph = document.getElementById('one-score');
+			var paragraph = document.getElementById('score');
 			paragraph.textContent = countcopy;
 		};
 	})(count));
