@@ -7,13 +7,13 @@ body {
 	text-align: center;
 }
 
-.cat-display {
+#catdisplay {
 	width: 50%;
 	float: left;
 	display:inline-block;
 }
 
-#cat-selection {
+#catselection {
 	width: 50%;
 	float: left;
 	display:inline-block;
