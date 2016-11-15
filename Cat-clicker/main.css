@@ -1,32 +1,3 @@
-body {
-	width: 100%;
-}
-
-.cat {
-	width: 100%;
-	text-align: center;
-}
-
-#catdisplay {
-	width: 50%;
-	float: left;
-	display:inline-block;
-}
-
-#catselection {
-	width: 50%;
-	float: left;
-	display:inline-block;
-}
-
-#score{
-	display: inline;
-}
-
-.clearfix:after {
-   content: " "; /* Older browser do not support empty content */
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
+#info {
+	visibility: hidden;
 }

@@ -1,111 +1,170 @@
-$(function(){
 
-	var model = {
-		init: function () {
-			if (!localStorage.cats) {
-                localStorage.cats = JSON.stringify([]);
-            }
-		},
-		add: function(obj) {
-			var data = JSON.parse(localStorage.cats);
-            data.push(obj);
-            localStorage.cats = JSON.stringify(data);
-		},
-		getAllCats:function () {
-			return JSON.parse(localStorage.cats);
-		}
-	};
-	var octopus = {
-		addNewCats: function(name,location,count) {
-			model.add ({
-				catName: name,
-				src: location,
-				count: count
-			});	
-			displayView.render();
-			selectView.render();
-		},
-		getCats: function () {
-			return model.getAllCats();
-		},
-		init: function() {
-			model.init();
-			displayView.init();
-			selectView.init();
-		}
-	};
-	var displayView = {
-		init: function () {
-			this.catdisplay = $('#catdisplay');
+/* ======= Model ======= */
 
-		},
-		render: function () {
-
-		}
-	};
-	var selectView = {
-		init: function () {
-			this.catselection = $('#catselection');
-
-		},
-		render: function () {
-			
-		}
-	};
-
-});
-
-// <p id="catName"></p>
-// 			<img src="images/cat1.jpg" id="catDisplay">
-// 			<p>Click score:</p>
-// 			<p id="score">0</p>
-// 			<div class="cat-img">
-// 				<p id="catName1"></p>
-// 				<img src="images/cat1.jpg">
-// 			</div>
+var model = {
+    currentCat: null,
+    cats: [
+        {
+            clickCount : 0,
+            name : 'Tabby',
+            imgSrc : 'images/cat1.jpg',
+            imgAttribution : 'https://www.flickr.com/photos/bigtallguy/434164568'
+        },
+        {
+            clickCount : 0,
+            name : 'Tiger',
+            imgSrc : 'images/cat2.jpg',
+            imgAttribution : 'https://www.flickr.com/photos/xshamx/4154543904'
+        },
+        {
+            clickCount : 0,
+            name : 'Scaredy',
+            imgSrc : 'images/cat3.jpg',
+            imgAttribution : 'https://www.flickr.com/photos/kpjas/22252709'
+        },
+        {
+            clickCount : 0,
+            name : 'Shadow',
+            imgSrc : 'images/cat4.jpg',
+            imgAttribution : 'https://www.flickr.com/photos/malfet/1413379559'
+        },
+        {
+            clickCount : 0,
+            name : 'Sleepy',
+            imgSrc : 'images/cat5.jpg',
+            imgAttribution : 'https://www.flickr.com/photos/onesharp/9648464288'
+        }
+    ]
+};
 
 
-	var catName1 = "chewie";
-	var catName2 = "poop";
-	var catName3 = "cutie";
-	var catName4 = "fury";
-	var catName5 = "bubble";
-	var count = 0;
+/* ======= Octopus ======= */
 
-	var catName = document.getElementById('catName');
-	catName.textContent = catName1;
+var octopus = {
 
-	//set the cat names to the cat images on the selection area
-	function setName () {
-		document.getElementById('catName1').textContent = catName1;
-		document.getElementById('catName2').textContent = catName2;
-		document.getElementById('catName3').textContent = catName3;
-		document.getElementById('catName4').textContent = catName4;
-		document.getElementById('catName5').textContent = catName5;
-	}
-		
-	
-	setName();
-	var catDisplay = document.getElementById('catDisplay');
-	var select = document.getElementById('cat-img');
+    init: function() {
+        // set our current cat to the first one in the list
+        model.currentCat = model.cats[0];
 
-	select.addEventListener("click", function changeCat(e) {
-		 if (e.target !== e.currentTarget) {
-		 	console.log(this.children);
-	        catDisplay.setAttribute('src', this.children[1].getAttribute('src'));
-	       	catName.setAttribute('textContent', this.children[0].getAttribute('textContent'));
-	    }
-	    e.stopPropagation();
+        // tell our views to initialize
+        catListView.init();
+        catView.init();
+    },
 
-	}, false);
+    getCurrentCat: function() {
+        return model.currentCat;
+    },
 
-	
-	//use the Immediately-Invoked Function Expression to keep local variable
-	catDisplay.addEventListener('click', (function(countcopy){
-		return function () {
-			countcopy += 1;
-			var paragraph = document.getElementById('score');
-			paragraph.textContent = countcopy;
-		};
-	})(count));
+    getCats: function() {
+        return model.cats;
+    },
 
+    // set the currently-selected cat to the object passed in
+    setCurrentCat: function(cat) {
+        model.currentCat = cat;
+    },
+
+    // increments the counter for the currently-selected cat
+    incrementCounter: function() {
+        model.currentCat.clickCount++;
+        catView.render();
+    },
+    //open the info section to change the info of the currentCat 
+   	openiInfoSection:function () {
+   		this.info = document.getElementById('info');
+   		this.admin = document.getElementById('admin');
+   		admin.addEventListener('click', function() {
+   			info.style.visibility = "visible";
+   		});
+
+   	},
+   	//clear the form and close the info section
+   	closeInfoSection:function() {
+   		this.info = document.getElementById('info');
+   		this.reset = document.getElementById('reset');
+   		reset.addEventListener('click',function() {
+   			info.style.visibility = "hidden";
+   		});
+   	},
+   	//save the change to update the currentCat info
+   	updateCurrentCat: function () {
+
+   	}
+};
+
+
+/* ======= View ======= */
+
+var catView = {
+
+    init: function() {
+        // store pointers to our DOM elements for easy access later
+        this.catElem = document.getElementById('cat');
+        this.catNameElem = document.getElementById('cat-name');
+        this.catImageElem = document.getElementById('cat-img');
+        this.countElem = document.getElementById('cat-count');
+
+        // on click, increment the current cat's counter
+        this.catImageElem.addEventListener('click', function(){
+            octopus.incrementCounter();
+        });
+
+        // render this view (update the DOM elements with the right values)
+        this.render();
+    },
+
+    render: function() {
+        // update the DOM elements with values from the current cat
+        var currentCat = octopus.getCurrentCat();
+        this.countElem.textContent = currentCat.clickCount;
+        this.catNameElem.textContent = currentCat.name;
+        this.catImageElem.src = currentCat.imgSrc;
+        octopus.openiInfoSection();
+    }
+};
+
+var catListView = {
+
+    init: function() {
+        // store the DOM element for easy access later
+        this.catListElem = document.getElementById('cat-list');
+
+        // render this view (update the DOM elements with the right values)
+        this.render();
+    },
+
+    render: function() {
+        var cat, elem, i;
+        // get the cats we'll be rendering from the octopus
+        var cats = octopus.getCats();
+
+        // empty the cat list
+        this.catListElem.innerHTML = '';
+
+        // loop over the cats
+        for (i = 0; i < cats.length; i++) {
+            // this is the cat we're currently looping over
+            cat = cats[i];
+
+            // make a new cat list item and set its text
+            elem = document.createElement('li');
+            elem.textContent = cat.name;
+
+            // on click, setCurrentCat and render the catView
+            // (this uses our closure-in-a-loop trick to connect the value
+            //  of the cat variable to the click event function)
+            elem.addEventListener('click', (function(catCopy) {
+                return function() {
+                    octopus.setCurrentCat(catCopy);
+                    catView.render();
+                };
+            })(cat));
+
+            // finally, add the element to the list
+            this.catListElem.appendChild(elem);
+        }
+    }
+};
+
+// make it go!
+octopus.init();
