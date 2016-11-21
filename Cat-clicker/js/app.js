@@ -88,7 +88,18 @@ var octopus = {
    	},
    	//save the change to update the currentCat info
    	updateCurrentCat: function () {
+   		this.save = document.getElementById("save");
 
+   		save.addEventListener('click',function(e) {
+   			e.preventDefault();
+   			var currentCat = octopus.getCurrentCat();
+			currentCat.clickCount = document.getElementById("click").value;
+	        currentCat.name = document.getElementById("name").value;
+	        currentCat.imgAttribution = document.getElementById("imgurl").value;
+	        octopus.setCurrentCat(currentCat);
+	        catView.render();
+	        document.getElementById('info').style.visibility = "hidden";
+   		});
    	}
 };
 
@@ -108,7 +119,8 @@ var catView = {
         this.catImageElem.addEventListener('click', function(){
             octopus.incrementCounter();
         });
-
+		octopus.openiInfoSection();
+        octopus.updateCurrentCat();
         // render this view (update the DOM elements with the right values)
         this.render();
     },
@@ -119,7 +131,6 @@ var catView = {
         this.countElem.textContent = currentCat.clickCount;
         this.catNameElem.textContent = currentCat.name;
         this.catImageElem.src = currentCat.imgSrc;
-        octopus.openiInfoSection();
     }
 };
 
